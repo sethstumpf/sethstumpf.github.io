@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex Entry — Субботин Иван Владимирович</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Press Start 2P & VT323 & Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        pokeblack: '#1A1A1A',
+                        pokepink: '#FF1493',
+                        pokelightpink: '#FF69B4',
+                        pokepale: '#FFF0F5',
+                    },
+                    fontFamily: {
+                        retro: ['"Press Start 2P"', 'monospace'],
+                        vt: ['"VT323"', 'monospace'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #1A1A1A;
+            color: #ffffff;
+        }
+        .scanlines {
+            background: linear-gradient(
+                to bottom,
+                rgba(255,255,255,0),
+                rgba(255,255,255,0) 50%,
+                rgba(0, 0, 0, 0.4) 50%,
+                rgba(0, 0, 0, 0.4)
+            );
+            background-size: 100% 4px;
+        }
+        .card-shadow {
+            box-shadow: 10px 10px 0px #FF1493, 10px 10px 0px 4px #1A1A1A;
+        }
+        .btn-shadow {
+            box-shadow: 4px 4px 0px #1A1A1A;
+            transition: all 0.1s ease;
+        }
+        .btn-shadow:active {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px #1A1A1A;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-3 sm:p-6 scanlines selection:bg-pokepink selection:text-white">
+
+    <!-- Main Pokédex Card Container -->
+    <div class="w-full max-w-4xl bg-white text-pokeblack border-4 border-pokeblack rounded-2xl card-shadow p-5 sm:p-8 relative overflow-hidden my-4">
+        
+        <!-- Header / Name / Level Bar -->
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b-4 border-pokeblack pb-5 mb-6 gap-3">
+            <div>
+                <div class="flex items-center gap-2 mb-1">
+                    <span class="bg-pokeblack text-white font-retro text-[10px] sm:text-xs px-2 py-1 rounded">№0001</span>
+                    <span class="font-retro text-xs text-pokepink font-bold tracking-wider">C++ / PYTHON TRAINEE</span>
+                </div>
+                <h1 class="font-retro text-lg sm:text-2xl text-pokeblack tracking-tight">Субботин Иван Владимирович</h1>
+            </div>
+            
+            <!-- Type Badges & Static Pokemon LVL 1 Badge -->
+            <div class="flex flex-wrap items-center gap-2 w-full md:w-auto justify-between md:justify-end">
+                <span class="bg-pokepink text-white font-retro text-[10px] px-3 py-1.5 rounded-lg border-2 border-pokeblack shadow-sm">EXCEL MASTER</span>
+                <div class="bg-pokeblack text-white px-3 py-1.5 rounded-lg border-2 border-pokeblack font-vt text-xl flex items-center">
+                    <span class="text-pokelightpink">Pokemon LVL 1</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Grid Layout: Visual, Primary Stats & Active Buffs -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-6">
+            
+            <!-- Left Side: Portrait & Base HP -->
+            <div class="md:col-span-4 bg-pokepale border-4 border-pokeblack rounded-xl p-4 flex flex-col items-center justify-between relative">
+                <div class="w-full flex justify-between items-center font-vt text-sm border-b-2 border-pokeblack pb-1 mb-2">
+                    <span class="font-bold text-pokepink">КЛАСС: СТАЖЁР</span>
+                    <span class="text-gray-600">ID: #0001</span>
+                </div>
+
+                <!-- Avatar Box -->
+                <div class="w-36 h-36 sm:w-40 sm:h-40 my-2 bg-white border-4 border-pokeblack rounded-xl flex items-center justify-center relative overflow-hidden shadow-inner">
+                    <img src="input_file_0.png" alt="Фото профиля" class="w-full h-full object-cover object-center">
+                    <div class="absolute bottom-1 right-1 bg-pokepink text-white font-vt text-xs px-1.5 rounded border border-pokeblack">
+                        100% READY
+                    </div>
+                </div>
+
+                <!-- Quick Attributes -->
+                <div class="w-full space-y-1 mt-2">
+                    <div class="flex justify-between font-vt text-base">
+                        <span>Здоровье (HP):</span>
+                        <span class="font-bold text-pokepink">100 / 100</span>
+                    </div>
+                    <div class="w-full bg-white h-3 border-2 border-pokeblack rounded-full overflow-hidden p-0.5">
+                        <div class="bg-pokepink h-full rounded-full w-full"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Stats & Passives -->
+            <div class="md:col-span-8 flex flex-col justify-between space-y-4">
+                
+                <!-- Base Stats Gauges -->
+                <div class="bg-pokeblack text-white p-4 rounded-xl border-4 border-pokeblack">
+                    <h2 class="font-retro text-xs text-pokelightpink mb-3 flex items-center gap-2">
+                        <span>📊</span> ХАРАКТЕРИСТИКИ ПЕРСОНАЖА
+                    </h2>
+                    <div class="space-y-2 font-vt text-lg">
+                        <!-- Stat 1 -->
+                        <div>
+                            <div class="flex justify-between text-sm">
+                                <span>C++ Практика (6 мес.):</span>
+                                <span class="text-pokelightpink">55 / 100</span>
+                            </div>
+                            <div class="w-full bg-gray-800 h-2.5 border border-white rounded-full overflow-hidden">
+                                <div class="bg-pokepink h-full w-[55%]"></div>
+                            </div>
+                        </div>
+                        <!-- Stat 2 -->
+                        <div>
+                            <div class="flex justify-between text-sm">
+                                <span>Python Разработка:</span>
+                                <span class="text-pokelightpink">65 / 100</span>
+                            </div>
+                            <div class="w-full bg-gray-800 h-2.5 border border-white rounded-full overflow-hidden">
+                                <div class="bg-pokelightpink h-full w-[65%]"></div>
+                            </div>
+                        </div>
+                        <!-- Stat 3 (Excel 100% / MAX) -->
+                        <div>
+                            <div class="flex justify-between text-sm">
+                                <span>Excel (Мастер таблицы):</span>
+                                <span class="text-pokepink font-bold">100 / 100 [MAX] (100/100 XP)</span>
+                            </div>
+                            <div class="w-full bg-gray-800 h-2.5 border border-white rounded-full overflow-hidden">
+                                <div class="bg-white h-full w-[100%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Passive Buffs / Favorite Food -->
+                <div class="bg-pokepale border-4 border-pokeblack p-4 rounded-xl">
+                    <h2 class="font-retro text-xs text-pokeblack mb-2 flex items-center gap-2">
+                        <span>🍟</span> ПАССИВНЫЕ НАВЫКИ И РАЦИОН
+                    </h2>
+                    <ul class="font-sans text-sm text-pokeblack space-y-1.5">
+                        <li class="flex items-center gap-2">
+                            <span class="bg-pokepink text-white font-bold px-1.5 py-0.5 text-[10px] rounded border border-pokeblack">БАФ 1</span>
+                            <span><strong>Чипсы с крабом 🦀:</strong> +20% к скорости поиска багов в коде.</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="bg-pokeblack text-white font-bold px-1.5 py-0.5 text-[10px] rounded border border-pokeblack">БАФ 2</span>
+                            <span><strong>Несквик с пивом 🥛🍺:</strong> Необычное сочетание, дающее +50% к нестандартному мышлению.</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- SECTION: EDUCATION (ОБРАЗОВАНИЕ) -->
+        <div class="mb-6 bg-white border-4 border-pokeblack rounded-xl p-5 relative overflow-hidden">
+            <h2 class="font-retro text-xs sm:text-sm text-pokeblack mb-4 flex items-center gap-2 border-b-2 border-pokeblack pb-2">
+                <span>🎓</span> БАЗА ЗНАНИЙ (ОБРАЗОВАНИЕ)
+            </h2>
+            
+            <div class="space-y-4">
+                <!-- Higher Education Subsection -->
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b-2 border-dashed border-gray-300 pb-4">
+                    <div class="space-y-1">
+                        <h3 class="font-retro text-xs text-pokepink">ВЫСШЕЕ ОБРАЗОВАНИЕ, БАКАЛАВРИАТ</h3>
+                        <p class="font-vt text-2xl text-pokeblack font-bold">Прикладной анализ данных и искусственный интеллект</p>
+                        <p class="font-sans text-xs text-gray-700">Анализ данных, машинное обучение и системная алгоритмизация.</p>
+                    </div>
+                    <div class="bg-pokepale border-2 border-pokeblack p-2.5 rounded-lg text-center min-w-[140px]">
+                        <span class="font-vt text-base text-pokepink font-bold block">СТАТУС</span>
+                        <span class="font-sans text-xs font-bold text-pokeblack">В ПРОЦЕССЕ (1/4)</span>
+                    </div>
+                </div>
+
+                <!-- Secondary Education Subsection -->
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                    <div class="space-y-1">
+                        <h3 class="font-retro text-xs text-pokepink">СРЕДНЕЕ ОБЩЕЕ ОБРАЗОВАНИЕ</h3>
+                        <p class="font-vt text-2xl text-pokeblack font-bold">МОАУ "Лицей №7" г. Оренбург</p>
+                        <p class="font-sans text-xs text-gray-700">Достаточно хороший физмат лицей, что ещё сказать?</p>
+                    </div>
+                    <div class="bg-pokepale border-2 border-pokeblack p-2.5 rounded-lg text-center min-w-[140px]">
+                        <span class="font-vt text-base text-pokepink font-bold block">СТАТУС</span>
+                        <span class="font-sans text-xs font-bold text-pokeblack">ЗАВЕРШЕНО</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- EXPERIENCE SECTION -->
+        <div class="mb-6 bg-pokeblack text-white border-4 border-pokeblack rounded-xl p-5">
+            <h2 class="font-retro text-xs text-pokelightpink mb-3 flex items-center gap-2 border-b border-gray-700 pb-2">
+                <span>💼</span> ОПЫТ РАБОТЫ / ЛОКАЦИЯ
+            </h2>
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 font-vt text-xl">
+                <div>
+                    <span class="text-gray-400">Текущий статус:</span>
+                    <span class="text-white ml-2">Не имеется (0 лет коммерческого опыта)</span>
+                </div>
+                <span class="bg-pokepink text-white text-xs font-retro px-2.5 py-1 rounded">ЛОКАЦИЯ: НЕ ИССЛЕДОВАНА</span>
+            </div>
+            <p class="font-sans text-xs text-gray-300 mt-2">
+                Готов к зачистке коммерческих тасков и первому боевому погружению в IT-проект.
+            </p>
+        </div>
+
+        <!-- SKILLS & TALENTS SECTION -->
+        <div class="mb-2 bg-white border-4 border-pokeblack rounded-xl p-5">
+            <h2 class="font-retro text-xs sm:text-sm text-pokeblack mb-4 flex items-center gap-2 border-b-2 border-pokeblack pb-2">
+                <span>⚔️</span> ДРЕВО НАВЫКОВ И ТАЛАНТОВ (ПОДРОБНЫЙ РАЗБОР)
+            </h2>
+            
+            <div class="space-y-4">
+                
+                <!-- Subtopic 1: C++ -->
+                <div class="bg-pokepale border-2 border-pokeblack rounded-xl p-4 relative">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b-2 border-pokeblack pb-2 mb-2">
+                        <div class="flex items-center gap-2">
+                            <span class="bg-pokepink text-white font-retro text-[10px] px-2 py-0.5 rounded border border-pokeblack">C++</span>
+                            <h3 class="font-vt text-2xl text-pokeblack font-bold">Разработка и Алгоритмы</h3>
+                        </div>
+                        <span class="font-vt text-lg bg-pokeblack text-white px-2.5 py-0.5 rounded w-fit">Практика последние полгода</span>
+                    </div>
+                    <ul class="font-sans text-xs sm:text-sm text-pokeblack space-y-1.5 list-disc list-inside">
+                        <li><strong>Опыт:</strong> Активная систематическая практика в течение последних 6 месяцев.</li>
+                        <li><strong>Базовые концепции:</strong> Понимание базового синтаксиса, работы с памятью, указателями и ссылками.</li>
+                        <li><strong>Алгоритмы и логика:</strong> Освоение основных структур данных и решения базовых алгоритмических задач.</li>
+                    </ul>
+                </div>
+
+                <!-- Subtopic 2: Python -->
+                <div class="bg-white border-2 border-pokeblack rounded-xl p-4 relative">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b-2 border-pokeblack pb-2 mb-2">
+                        <div class="flex items-center gap-2">
+                            <span class="bg-pokeblack text-white font-retro text-[10px] px-2 py-0.5 rounded border border-pokeblack">PYTHON</span>
+                            <h3 class="font-vt text-2xl text-pokeblack font-bold">Скриптинг и Логика</h3>
+                        </div>
+                        <span class="font-vt text-lg bg-pokepink text-white px-2.5 py-0.5 rounded w-fit">Умею работать</span>
+                    </div>
+                    <ul class="font-sans text-xs sm:text-sm text-pokeblack space-y-1.5 list-disc list-inside">
+                        <li><strong>Применение:</strong> Уверенное владение синтаксисом Python для решения повседневных задач и быстрой разработки.</li>
+                        <li><strong>Обработка данных:</strong> Автоматизация рутинных процессов, написание скриптов и логических модулей.</li>
+                        <li><strong>Интеграция:</strong> Написание понятного, чистого кода для работы со структурированными данными.</li>
+                    </ul>
+                </div>
+
+                <!-- Subtopic 3: Excel -->
+                <div class="bg-pokepale border-2 border-pokeblack rounded-xl p-4 relative">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b-2 border-pokeblack pb-2 mb-2">
+                        <div class="flex items-center gap-2">
+                            <span class="bg-pokepink text-white font-retro text-[10px] px-2 py-0.5 rounded border border-pokeblack">EXCEL</span>
+                            <h3 class="font-vt text-2xl text-pokeblack font-bold">Работа с Данными</h3>
+                        </div>
+                        <span class="font-vt text-lg bg-pokeblack text-white px-2.5 py-0.5 rounded w-fit">Отлично заполняю таблички</span>
+                    </div>
+                    <ul class="font-sans text-xs sm:text-sm text-pokeblack space-y-1.5 list-disc list-inside">
+                        <li><strong>Мастерство ячеек:</strong> Высокая скорость и пиксель-перфект качество заполнения таблиц любой сложности.</li>
+                        <li><strong>Структурирование:</strong> Оформление, форматирование и систематизация любых массивов данных.</li>
+                        <li><strong>Формулы и логика:</strong> Применение продвинутых формул для вычислений и сведения информации.</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Status note regarding unblocked abilities -->
+            <div class="mt-4 bg-white border-2 border-dashed border-pokeblack p-3 rounded-lg flex items-center justify-between gap-2">
+                <span class="font-sans text-xs text-gray-700">Прочие дополнительные умения и таланты: <strong>Ещё не разблокированы 🔒</strong></span>
+                <span class="font-vt text-sm text-pokepink font-bold whitespace-nowrap">NEXT LEVEL SOON</span>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
