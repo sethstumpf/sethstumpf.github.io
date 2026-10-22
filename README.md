@@ -1,1 +1,0 @@
-# sethstumpf.github.io
